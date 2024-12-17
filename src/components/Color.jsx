@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const Color = ({ hexColor }) => {
   const [copyStatus, setCopyStatus] = useState(false);
@@ -30,6 +30,10 @@ const Color = ({ hexColor }) => {
       </div>
     </CopyToClipboard>
   );
+};
+
+Color.propTypes = {
+  hexColor: PropTypes.string.isRequired, // Ensures hexColor is a required string
 };
 
 export default Color;
